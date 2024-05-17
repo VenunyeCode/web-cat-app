@@ -1,0 +1,37 @@
+{
+    "products" : [
+        {
+            "id" : 1, 
+            "name" : "Computer",
+            "price" : 6300,
+            "quantity" : 450,
+            "available" : true,
+            "selected" : true
+        },
+        {
+            "id" : 2, 
+            "name" : "Printer",
+            "price" : 550,
+            "quantity" : 450,
+            "available" : true,
+            "selected" : false
+        },
+        {
+            "id" : 3, 
+            "name" : "Mouse",
+            "price" : 6300,
+            "quantity" : 450,
+            "available" : true,
+            "selected" : false
+        },
+        {
+            "id" : 4, 
+            "name" : "Keyboard",
+            "price" : 630,
+            "quantity" : 40,
+            "available" : true,
+            "selected" : false
+        }
+
+    ]
+}
