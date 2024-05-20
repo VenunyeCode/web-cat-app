@@ -5,12 +5,10 @@ import { utils } from "utils";
 import { Product } from "../models/product.model";
 @Injectable({providedIn:"root"})
 export class ProductsService {
-    constructor(private http:HttpClient){
-
-    }
+    constructor(private http:HttpClient){}
 
     getAllProducts():Observable<Product[]>{
-        let host = utils.host
+        let host = (Math.random() > 0.2) ? utils.host : utils.unreachableHost
         return this.http.get<Product[]>(host+"/products");
     }
 
@@ -22,6 +20,12 @@ export class ProductsService {
     getAvailableProducts():Observable<Product[]>{
         let host = utils.host;
         return this.http.get<Product[]>(host+"/products?available=true");
+    }
+    
+
+    searchProducts(keyword : string) : Observable<Product[]>{
+        let host = utils.host;
+        return this.http.get<Product[]>(host + "/products?name_like="+keyword);
     }
 
 }

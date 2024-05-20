@@ -8,11 +8,6 @@ import { Dropdown } from 'bootstrap';
 })
 export class NavBarComponent implements AfterViewInit {
   ngAfterViewInit(): void {
-    const dropDownElementList = 
-        [].slice.call(document.querySelector('.dropdown-toggle'));
-      const dropdownList = 
-        dropDownElementList.map(function(dropdownToggleEl) {
-          return new Dropdown(dropdownToggleEl)
-        });
+    
   }
 }
