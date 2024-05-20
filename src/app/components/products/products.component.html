@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-sm bg-light navbar-light d-flex justify-content-around">
-    <ul class="navbar navbar-nav mr-5">
+    <ul class="navbar navbar-nav ml-2">
         <li>
             <button (click)="onGetAllProducts()" class="btn btn-sm btn-outline-info ml-3">All</button>
         </li>
@@ -8,6 +8,9 @@
         </li>
         <li>
             <button (click)="onGetAvailableProducts()" class="btn btn-sm btn-outline-info ml-3">Available</button>
+        </li>
+        <li>
+            <button (click)="onNewProduct()" class="btn btn-sm btn-outline-info ml-3">New</button>
         </li>
     </ul>
 
@@ -36,8 +39,9 @@
                     <th>Name</th>
                     <th>Price</th>
                     <th>Quantity</th>
-                    <th>Selected</th>
                     <th>Available</th>
+                    <th>Selected</th>
+                    <td>Delete</td>
                 </thead>
                 <tbody>
                     <tr *ngFor="let p of result.data">
@@ -45,8 +49,23 @@
                         <td>{{p.name}}</td>
                         <td>{{p.price}}</td>
                         <td>{{p.quantity}}</td>
-                        <td>{{p.selected}}</td>
                         <td>{{p.available}}</td>
+                        <td>
+                            <button [ngClass]="p.selected?' btn btn-success' : 'btn btn-danger'" (click)="onSelect(p)">
+                                <span *ngIf="p.selected">Unselect</span>
+                                <span *ngIf="!p.selected">Select</span>
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-danger" (click)="onDelete(p)">
+                                <span class="fa fa-trash-o"></span>
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-outline-info" (click)="onEdit(p)">
+                                <span class="fa fa-edit"></span>
+                            </button>
+                        </td>
                     </tr>
                 </tbody>
             </table>

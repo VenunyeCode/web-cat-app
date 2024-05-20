@@ -12,6 +12,11 @@ export class ProductsService {
         return this.http.get<Product[]>(host+"/products");
     }
 
+    getProductById(id : number) : Observable<Product>{
+        let host = utils.host;
+        return this.http.get<Product>(host + "/products/" + id);
+    }
+
     getSelectedProducts():Observable<Product[]>{
         let host = utils.host;
         return this.http.get<Product[]>(host+"/products?selected=true");
@@ -25,7 +30,30 @@ export class ProductsService {
 
     searchProducts(keyword : string) : Observable<Product[]>{
         let host = utils.host;
-        return this.http.get<Product[]>(host + "/products?name_like="+keyword);
+        return this.http.get<Product[]>(host + "/products?q="+keyword);
     }
+
+    selectProduct(p : Product) : Observable<Product>{
+        let host = utils.host;
+        p.selected = !p.selected;
+        return this.http.put<Product>(host + "/products/"+p.id, p);
+    }
+
+    deleteProduct(p : Product) : Observable<void> {
+        let host = utils.host;
+        return this.http.delete<void>(host + "/products/" + p.id);
+    }
+
+    saveProduct(p : Product) : Observable<Product> {
+        let host = utils.host;
+        return this.http.post<Product>(host + "/products", p)
+    }
+
+    updateProduct(p : Product) : Observable<Product> {
+        let host = utils.host;
+        return this.http.put<Product>(host + "/products/"+p.id, p);
+    }
+
+    
 
 }

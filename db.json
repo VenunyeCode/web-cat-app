@@ -1,37 +1,28 @@
 {
-    "products" : [
-        {
-            "id" : 1, 
-            "name" : "Computer",
-            "price" : 6300,
-            "quantity" : 450,
-            "available" : true,
-            "selected" : true
-        },
-        {
-            "id" : 2, 
-            "name" : "Printer",
-            "price" : 550,
-            "quantity" : 450,
-            "available" : true,
-            "selected" : false
-        },
-        {
-            "id" : 3, 
-            "name" : "Mouse",
-            "price" : 6300,
-            "quantity" : 450,
-            "available" : true,
-            "selected" : false
-        },
-        {
-            "id" : 4, 
-            "name" : "Keyboard",
-            "price" : 630,
-            "quantity" : 40,
-            "available" : true,
-            "selected" : false
-        }
-
-    ]
+  "products": [
+    {
+      "id": "4",
+      "name": "Dell Keyboard",
+      "price": 630,
+      "quantity": 40,
+      "selected": false,
+      "available": true
+    },
+    {
+      "id": "5",
+      "name": "Smartphone",
+      "price": 500,
+      "quantity": 20,
+      "available": true,
+      "selected": false
+    },
+    {
+      "id": "d2e7",
+      "name": "Iphone",
+      "price": "350",
+      "quantity": "120",
+      "selected": false,
+      "available": true
+    }
+  ]
 }
