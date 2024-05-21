@@ -15,29 +15,7 @@
                     <td>Delete</td>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let p of result.data">
-                        <td>{{p.id}}</td>
-                        <td>{{p.name}}</td>
-                        <td>{{p.price}}</td>
-                        <td>{{p.quantity}}</td>
-                        <td>{{p.available}}</td>
-                        <td>
-                            <button [ngClass]="p.selected?' btn btn-success' : 'btn btn-danger'" (click)="onSelect(p)">
-                                <span *ngIf="p.selected">Unselect</span>
-                                <span *ngIf="!p.selected">Select</span>
-                            </button>
-                        </td>
-                        <td>
-                            <button class="btn btn-danger" (click)="onDelete(p)">
-                                <span class="fa fa-trash-o"></span>
-                            </button>
-                        </td>
-                        <td>
-                            <button class="btn btn-outline-info" (click)="onEdit(p)">
-                                <span class="fa fa-edit"></span>
-                            </button>
-                        </td>
-                    </tr>
+                    <app-product-item *ngFor="let p of result.data"></app-product-item>
                 </tbody>
             </table>
         </ng-container>
