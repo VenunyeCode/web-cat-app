@@ -30,7 +30,7 @@ export class ProductsService {
 
     searchProducts(keyword : string) : Observable<Product[]>{
         let host = utils.host;
-        return this.http.get<Product[]>(host + "/products?q="+keyword);
+        return this.http.get<Product[]>(host + "/products?name_like="+keyword);
     }
 
     selectProduct(p : Product) : Observable<Product>{

@@ -1,14 +1,6 @@
 {
   "products": [
     {
-      "id": "4",
-      "name": "Dell Keyboard",
-      "price": "450",
-      "quantity": "400",
-      "selected": true,
-      "available": true
-    },
-    {
       "id": "5",
       "name": "Smartphone",
       "price": 500,
